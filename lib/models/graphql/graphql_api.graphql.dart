@@ -8,222 +8,456 @@ import 'package:gql/ast.dart';
 part 'graphql_api.graphql.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesPaginatedData$Query$AllCompaniesPaginated with EquatableMixin {
-  CompaniesPaginatedData$Query$AllCompaniesPaginated();
+class WineDetailed$Query$Catalog$Items$Suggestions$Shop with EquatableMixin {
+  WineDetailed$Query$Catalog$Items$Suggestions$Shop();
 
-  factory CompaniesPaginatedData$Query$AllCompaniesPaginated.fromJson(
+  factory WineDetailed$Query$Catalog$Items$Suggestions$Shop.fromJson(
           Map<String, dynamic> json) =>
-      _$CompaniesPaginatedData$Query$AllCompaniesPaginatedFromJson(json);
+      _$WineDetailed$Query$Catalog$Items$Suggestions$ShopFromJson(json);
 
-  String id;
-
+  @JsonKey(name: 'Name')
   String name;
 
-  String industry;
-
   @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [id, name, industry, $$typename];
+  List<Object> get props => [name];
   Map<String, dynamic> toJson() =>
-      _$CompaniesPaginatedData$Query$AllCompaniesPaginatedToJson(this);
+      _$WineDetailed$Query$Catalog$Items$Suggestions$ShopToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesPaginatedData$Query with EquatableMixin {
-  CompaniesPaginatedData$Query();
+class WineDetailed$Query$Catalog$Items$Suggestions with EquatableMixin {
+  WineDetailed$Query$Catalog$Items$Suggestions();
 
-  factory CompaniesPaginatedData$Query.fromJson(Map<String, dynamic> json) =>
-      _$CompaniesPaginatedData$QueryFromJson(json);
-
-  List<CompaniesPaginatedData$Query$AllCompaniesPaginated>
-      allCompaniesPaginated;
-
-  @override
-  List<Object> get props => [allCompaniesPaginated];
-  Map<String, dynamic> toJson() => _$CompaniesPaginatedData$QueryToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class PaginationInput with EquatableMixin {
-  PaginationInput({@required this.limit, @required this.offset});
-
-  factory PaginationInput.fromJson(Map<String, dynamic> json) =>
-      _$PaginationInputFromJson(json);
-
-  int limit;
-
-  int offset;
-
-  @override
-  List<Object> get props => [limit, offset];
-  Map<String, dynamic> toJson() => _$PaginationInputToJson(this);
-}
-
-@JsonSerializable(explicitToJson: true)
-class CompaniesData$Query$AllCompanies with EquatableMixin {
-  CompaniesData$Query$AllCompanies();
-
-  factory CompaniesData$Query$AllCompanies.fromJson(
+  factory WineDetailed$Query$Catalog$Items$Suggestions.fromJson(
           Map<String, dynamic> json) =>
-      _$CompaniesData$Query$AllCompaniesFromJson(json);
+      _$WineDetailed$Query$Catalog$Items$SuggestionsFromJson(json);
 
-  String id;
+  @JsonKey(name: 'URL')
+  String url;
 
+  @JsonKey(name: 'Price')
+  int price;
+
+  @JsonKey(name: 'Shop')
+  WineDetailed$Query$Catalog$Items$Suggestions$Shop shop;
+
+  @override
+  List<Object> get props => [url, price, shop];
+  Map<String, dynamic> toJson() =>
+      _$WineDetailed$Query$Catalog$Items$SuggestionsToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class WineDetailed$Query$Catalog$Items with EquatableMixin {
+  WineDetailed$Query$Catalog$Items();
+
+  factory WineDetailed$Query$Catalog$Items.fromJson(
+          Map<String, dynamic> json) =>
+      _$WineDetailed$Query$Catalog$ItemsFromJson(json);
+
+  @JsonKey(name: 'UID')
+  String uid;
+
+  @JsonKey(name: 'Name')
   String name;
 
-  String industry;
+  @JsonKey(name: 'Colour', unknownEnumValue: Colour.artemisUnknown)
+  Colour colour;
+
+  @JsonKey(name: 'LowestPrice')
+  int lowestPrice;
+
+  @JsonKey(name: 'ImageURL')
+  String imageURL;
+
+  @JsonKey(name: 'Suggestions')
+  List<WineDetailed$Query$Catalog$Items$Suggestions> suggestions;
 
   @override
-  @JsonKey(name: '__typename')
-  String $$typename;
-
-  @override
-  List<Object> get props => [id, name, industry, $$typename];
+  List<Object> get props =>
+      [uid, name, colour, lowestPrice, imageURL, suggestions];
   Map<String, dynamic> toJson() =>
-      _$CompaniesData$Query$AllCompaniesToJson(this);
+      _$WineDetailed$Query$Catalog$ItemsToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesData$Query with EquatableMixin {
-  CompaniesData$Query();
+class WineDetailed$Query$Catalog with EquatableMixin {
+  WineDetailed$Query$Catalog();
 
-  factory CompaniesData$Query.fromJson(Map<String, dynamic> json) =>
-      _$CompaniesData$QueryFromJson(json);
+  factory WineDetailed$Query$Catalog.fromJson(Map<String, dynamic> json) =>
+      _$WineDetailed$Query$CatalogFromJson(json);
 
-  List<CompaniesData$Query$AllCompanies> allCompanies;
+  @JsonKey(name: 'Items')
+  List<WineDetailed$Query$Catalog$Items> items;
 
   @override
-  List<Object> get props => [allCompanies];
-  Map<String, dynamic> toJson() => _$CompaniesData$QueryToJson(this);
+  List<Object> get props => [items];
+  Map<String, dynamic> toJson() => _$WineDetailed$Query$CatalogToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
-class CompaniesPaginatedDataArguments extends JsonSerializable
-    with EquatableMixin {
-  CompaniesPaginatedDataArguments({@required this.pagination});
+class WineDetailed$Query with EquatableMixin {
+  WineDetailed$Query();
 
-  factory CompaniesPaginatedDataArguments.fromJson(Map<String, dynamic> json) =>
-      _$CompaniesPaginatedDataArgumentsFromJson(json);
+  factory WineDetailed$Query.fromJson(Map<String, dynamic> json) =>
+      _$WineDetailed$QueryFromJson(json);
 
-  final PaginationInput pagination;
+  @JsonKey(name: 'Catalog')
+  WineDetailed$Query$Catalog catalog;
 
   @override
-  List<Object> get props => [pagination];
-  Map<String, dynamic> toJson() =>
-      _$CompaniesPaginatedDataArgumentsToJson(this);
+  List<Object> get props => [catalog];
+  Map<String, dynamic> toJson() => _$WineDetailed$QueryToJson(this);
 }
 
-class CompaniesPaginatedDataQuery extends GraphQLQuery<
-    CompaniesPaginatedData$Query, CompaniesPaginatedDataArguments> {
-  CompaniesPaginatedDataQuery({this.variables});
+@JsonSerializable(explicitToJson: true)
+class CatalogPaginated$Query$Catalog$Items with EquatableMixin {
+  CatalogPaginated$Query$Catalog$Items();
+
+  factory CatalogPaginated$Query$Catalog$Items.fromJson(
+          Map<String, dynamic> json) =>
+      _$CatalogPaginated$Query$Catalog$ItemsFromJson(json);
+
+  @JsonKey(name: 'UID')
+  String uid;
+
+  @JsonKey(name: 'Name')
+  String name;
+
+  @JsonKey(name: 'Colour', unknownEnumValue: Colour.artemisUnknown)
+  Colour colour;
+
+  @JsonKey(name: 'Type', unknownEnumValue: Type.artemisUnknown)
+  Type type;
+
+  @JsonKey(name: 'LowestPrice')
+  int lowestPrice;
+
+  @JsonKey(name: 'ImageURL')
+  String imageURL;
+
+  @override
+  List<Object> get props => [uid, name, colour, type, lowestPrice, imageURL];
+  Map<String, dynamic> toJson() =>
+      _$CatalogPaginated$Query$Catalog$ItemsToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class CatalogPaginated$Query$Catalog with EquatableMixin {
+  CatalogPaginated$Query$Catalog();
+
+  factory CatalogPaginated$Query$Catalog.fromJson(Map<String, dynamic> json) =>
+      _$CatalogPaginated$Query$CatalogFromJson(json);
+
+  @JsonKey(name: 'Items')
+  List<CatalogPaginated$Query$Catalog$Items> items;
+
+  @JsonKey(name: 'TotalItems')
+  int totalItems;
+
+  @override
+  List<Object> get props => [items, totalItems];
+  Map<String, dynamic> toJson() => _$CatalogPaginated$Query$CatalogToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class CatalogPaginated$Query with EquatableMixin {
+  CatalogPaginated$Query();
+
+  factory CatalogPaginated$Query.fromJson(Map<String, dynamic> json) =>
+      _$CatalogPaginated$QueryFromJson(json);
+
+  @JsonKey(name: 'Catalog')
+  CatalogPaginated$Query$Catalog catalog;
+
+  @override
+  List<Object> get props => [catalog];
+  Map<String, dynamic> toJson() => _$CatalogPaginated$QueryToJson(this);
+}
+
+enum Colour {
+  @JsonValue('Orange')
+  orange,
+  @JsonValue('Pink')
+  pink,
+  @JsonValue('Red')
+  red,
+  @JsonValue('White')
+  white,
+  @JsonValue('ARTEMIS_UNKNOWN')
+  artemisUnknown,
+}
+enum Type {
+  @JsonValue('Dry')
+  dry,
+  @JsonValue('SemiDry')
+  semiDry,
+  @JsonValue('SemiSweet')
+  semiSweet,
+  @JsonValue('Sweet')
+  sweet,
+  @JsonValue('ARTEMIS_UNKNOWN')
+  artemisUnknown,
+}
+
+@JsonSerializable(explicitToJson: true)
+class WineDetailedArguments extends JsonSerializable with EquatableMixin {
+  WineDetailedArguments({@required this.uid});
+
+  @override
+  factory WineDetailedArguments.fromJson(Map<String, dynamic> json) =>
+      _$WineDetailedArgumentsFromJson(json);
+
+  final String uid;
+
+  @override
+  List<Object> get props => [uid];
+  @override
+  Map<String, dynamic> toJson() => _$WineDetailedArgumentsToJson(this);
+}
+
+class WineDetailedQuery
+    extends GraphQLQuery<WineDetailed$Query, WineDetailedArguments> {
+  WineDetailedQuery({this.variables});
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
     OperationDefinitionNode(
         type: OperationType.query,
-        name: NameNode(value: 'CompaniesPaginatedData'),
+        name: NameNode(value: 'WineDetailed'),
         variableDefinitions: [
           VariableDefinitionNode(
-              variable: VariableNode(name: NameNode(value: 'pagination')),
+              variable: VariableNode(name: NameNode(value: 'uid')),
               type: NamedTypeNode(
-                  name: NameNode(value: 'PaginationInput'), isNonNull: true),
+                  name: NameNode(value: 'String'), isNonNull: true),
               defaultValue: DefaultValueNode(value: null),
               directives: [])
         ],
         directives: [],
         selectionSet: SelectionSetNode(selections: [
           FieldNode(
-              name: NameNode(value: 'allCompaniesPaginated'),
+              name: NameNode(value: 'Catalog'),
               alias: null,
               arguments: [
                 ArgumentNode(
-                    name: NameNode(value: 'pagination'),
-                    value: VariableNode(name: NameNode(value: 'pagination')))
+                    name: NameNode(value: 'filter'),
+                    value: ObjectValueNode(fields: [
+                      ObjectFieldNode(
+                          name: NameNode(value: 'UID'),
+                          value: VariableNode(name: NameNode(value: 'uid'))),
+                      ObjectFieldNode(
+                          name: NameNode(value: 'Page'),
+                          value: IntValueNode(value: '1')),
+                      ObjectFieldNode(
+                          name: NameNode(value: 'Limit'),
+                          value: IntValueNode(value: '1'))
+                    ]))
               ],
               directives: [],
               selectionSet: SelectionSetNode(selections: [
                 FieldNode(
-                    name: NameNode(value: 'id'),
+                    name: NameNode(value: 'Items'),
                     alias: null,
                     arguments: [],
                     directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'industry'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null)
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'UID'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'Name'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'Colour'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'LowestPrice'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'ImageURL'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'Suggestions'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: SelectionSetNode(selections: [
+                            FieldNode(
+                                name: NameNode(value: 'URL'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'Price'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: null),
+                            FieldNode(
+                                name: NameNode(value: 'Shop'),
+                                alias: null,
+                                arguments: [],
+                                directives: [],
+                                selectionSet: SelectionSetNode(selections: [
+                                  FieldNode(
+                                      name: NameNode(value: 'Name'),
+                                      alias: null,
+                                      arguments: [],
+                                      directives: [],
+                                      selectionSet: null)
+                                ]))
+                          ]))
+                    ]))
               ]))
         ]))
   ]);
 
   @override
-  final String operationName = 'CompaniesPaginatedData';
+  final String operationName = 'WineDetailed';
 
   @override
-  final CompaniesPaginatedDataArguments variables;
+  final WineDetailedArguments variables;
 
   @override
   List<Object> get props => [document, operationName, variables];
   @override
-  CompaniesPaginatedData$Query parse(Map<String, dynamic> json) =>
-      CompaniesPaginatedData$Query.fromJson(json);
+  WineDetailed$Query parse(Map<String, dynamic> json) =>
+      WineDetailed$Query.fromJson(json);
 }
 
-class CompaniesDataQuery
-    extends GraphQLQuery<CompaniesData$Query, JsonSerializable> {
-  CompaniesDataQuery();
+@JsonSerializable(explicitToJson: true)
+class CatalogPaginatedArguments extends JsonSerializable with EquatableMixin {
+  CatalogPaginatedArguments(
+      {@required this.page, @required this.limit, this.query});
+
+  @override
+  factory CatalogPaginatedArguments.fromJson(Map<String, dynamic> json) =>
+      _$CatalogPaginatedArgumentsFromJson(json);
+
+  final int page;
+
+  final int limit;
+
+  final String query;
+
+  @override
+  List<Object> get props => [page, limit, query];
+  @override
+  Map<String, dynamic> toJson() => _$CatalogPaginatedArgumentsToJson(this);
+}
+
+class CatalogPaginatedQuery
+    extends GraphQLQuery<CatalogPaginated$Query, CatalogPaginatedArguments> {
+  CatalogPaginatedQuery({this.variables});
 
   @override
   final DocumentNode document = DocumentNode(definitions: [
     OperationDefinitionNode(
         type: OperationType.query,
-        name: NameNode(value: 'CompaniesData'),
-        variableDefinitions: [],
+        name: NameNode(value: 'CatalogPaginated'),
+        variableDefinitions: [
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'page')),
+              type:
+                  NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: true),
+              defaultValue: DefaultValueNode(value: null),
+              directives: []),
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'limit')),
+              type:
+                  NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: true),
+              defaultValue: DefaultValueNode(value: null),
+              directives: []),
+          VariableDefinitionNode(
+              variable: VariableNode(name: NameNode(value: 'query')),
+              type: NamedTypeNode(
+                  name: NameNode(value: 'String'), isNonNull: false),
+              defaultValue: DefaultValueNode(value: null),
+              directives: [])
+        ],
         directives: [],
         selectionSet: SelectionSetNode(selections: [
           FieldNode(
-              name: NameNode(value: 'allCompanies'),
+              name: NameNode(value: 'Catalog'),
               alias: null,
-              arguments: [],
+              arguments: [
+                ArgumentNode(
+                    name: NameNode(value: 'filter'),
+                    value: ObjectValueNode(fields: [
+                      ObjectFieldNode(
+                          name: NameNode(value: 'Page'),
+                          value: VariableNode(name: NameNode(value: 'page'))),
+                      ObjectFieldNode(
+                          name: NameNode(value: 'Limit'),
+                          value: VariableNode(name: NameNode(value: 'limit'))),
+                      ObjectFieldNode(
+                          name: NameNode(value: 'Query'),
+                          value: VariableNode(name: NameNode(value: 'query')))
+                    ]))
+              ],
               directives: [],
               selectionSet: SelectionSetNode(selections: [
                 FieldNode(
-                    name: NameNode(value: 'id'),
+                    name: NameNode(value: 'Items'),
                     alias: null,
                     arguments: [],
                     directives: [],
-                    selectionSet: null),
+                    selectionSet: SelectionSetNode(selections: [
+                      FieldNode(
+                          name: NameNode(value: 'UID'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'Name'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'Colour'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'Type'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'LowestPrice'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null),
+                      FieldNode(
+                          name: NameNode(value: 'ImageURL'),
+                          alias: null,
+                          arguments: [],
+                          directives: [],
+                          selectionSet: null)
+                    ])),
                 FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: 'industry'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null),
-                FieldNode(
-                    name: NameNode(value: '__typename'),
+                    name: NameNode(value: 'TotalItems'),
                     alias: null,
                     arguments: [],
                     directives: [],
@@ -233,11 +467,14 @@ class CompaniesDataQuery
   ]);
 
   @override
-  final String operationName = 'CompaniesData';
+  final String operationName = 'CatalogPaginated';
 
   @override
-  List<Object> get props => [document, operationName];
+  final CatalogPaginatedArguments variables;
+
   @override
-  CompaniesData$Query parse(Map<String, dynamic> json) =>
-      CompaniesData$Query.fromJson(json);
+  List<Object> get props => [document, operationName, variables];
+  @override
+  CatalogPaginated$Query parse(Map<String, dynamic> json) =>
+      CatalogPaginated$Query.fromJson(json);
 }

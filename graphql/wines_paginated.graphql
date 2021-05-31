@@ -1,0 +1,13 @@
+query CatalogPaginated($page: Int!, $limit: Int!, $query: String) {
+    Catalog(filter: {Page: $page, Limit: $limit, Query: $query}) {
+        Items {
+            UID
+            Name
+            Colour
+            Type
+            LowestPrice
+            ImageURL
+        }
+        TotalItems
+    }
+}

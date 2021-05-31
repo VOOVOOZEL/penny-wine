@@ -1,0 +1,18 @@
+query WineDetailed($uid: String!){
+    Catalog(filter: {UID: $uid, Page: 1, Limit: 1}) {
+        Items {
+            UID
+            Name
+            Colour
+            LowestPrice
+            ImageURL
+            Suggestions {
+                URL
+                Price
+                Shop {
+                    Name
+                }
+            }
+        }
+    }
+}

@@ -48,7 +48,6 @@ abstract class GraphqlBloc<T> extends Bloc<GraphqlEvent<T>, GraphqlState<T>> {
 
   void _refetch() => result.refetch();
 
-  @override
   GraphqlState<T> get initialState => GraphqlLoading<T>();
 
   @override

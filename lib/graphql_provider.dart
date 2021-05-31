@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:graphql_toolchain/main.dart';
 
 final client = getClient(
-  uri: 'http://$host:9002/graphql',
+  uri: 'http://$host:8080/query',
 );
 
 GraphQLClient getClient({

@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:graphql_toolchain/bloc.dart';
+import 'package:graphql_toolchain/screens/catalog.dart';
 import 'package:graphql_toolchain/graphql_provider.dart';
-import 'package:graphql_toolchain/simple.dart';
+import 'package:graphql_toolchain/screens/wine.page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,42 +25,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GraphqlProvider(
-      uri: 'http://$host:9002/graphql',
+      uri: 'http://$host:8080/query',
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         routes: {
-          'simple': (_) => Simple(),
-          'bloc': (_) => Bloc(),
+          WineDetailScreen.routeName: (context) => WineDetailScreen(),
         },
-        home: Home(),
-      ),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Select example"),
-      ),
-      body: ListView(
-        children: [
-          ListTile(
-            title: Text('Simple example'),
-            onTap: () => Navigator.of(context).pushNamed('simple'),
-          ),
-          Divider(),
-          ListTile(
-            title: Text('BLOC example'),
-            onTap: () => Navigator.of(context).pushNamed('bloc'),
-          ),
-          Divider(),
-        ],
+        home: Catalog(),
       ),
     );
   }
